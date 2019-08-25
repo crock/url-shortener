@@ -1,0 +1,69 @@
+<h1 class="text-center mb-4">URL Shortener</h1>
+<% if (typeof error !== "undefined") { %>
+<div class="row my-3">
+  <div class="col-4 offset-4">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <%= error %>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
+<% } %> <% if (typeof success !== "undefined") { %>
+<div class="row my-3">
+  <div class="col-4 offset-4">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= success %>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
+<% } %>
+<div class="d-flex justify-content-center">
+  <form class="form-inline" method="POST" action="/">
+    <div class="form-group mb-2">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter a URL to shorten..."
+        name="url"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mb-2 ml-2">Shorten</button>
+  </form>
+</div>
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th scope="col">URL</th>
+      <th scope="col">Shortened URL</th>
+      <th scope="col">URL ID</th>
+      <th scope="col">Visits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if (typeof urls !== 'undefined') { %> <% urls.forEach(function(url){ %>
+    <tr>
+      <th scope="row"><%= url.url %></th>
+      <td><%= `${shortUrl}/${url._id}` %></td>
+      <td><%= url._id %></td>
+      <td>
+        <span class="badge  badge-info"><%= url.visits %></span>
+      </td>
+    </tr>
+    <%} ) } %>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+#layoutMain {
+  height: 100vh;
+  width: 100vw;
+  background: url("https://www.transparenttextures.com/patterns/billie-holiday.png"),
+    linear-gradient(to right, #2b5876, #4e4376); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#container {
+  border-radius: 12px;
+  background: #fff;
+  padding: 25px;
+}
+
+.form-control {
+  min-width: 350px;
+}
