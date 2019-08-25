@@ -93,8 +93,4 @@ router.get("/:id", async ctx => {
   }
 });
 
-router.get("/:*/:*", async ctx => {
-  console.log(ctx.params);
-});
-
 module.exports = router;
